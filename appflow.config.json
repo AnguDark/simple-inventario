@@ -1,8 +1,17 @@
 {
     "apps": [
-        {
-            "appId": "a705177c",
-            "iosPath": "ios/App"
+      {
+        "appId": "a705177c",
+        "iosPath": "ios/App",
+        "hooks": {
+          "build": {
+            "before": [
+              {
+                "command": "npm install"
+              }
+            ]
+          }
         }
+      }
     ]
-}
+  }
