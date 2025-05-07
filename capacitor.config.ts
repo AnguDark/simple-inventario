@@ -3,7 +3,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'com.example.app', // Reemplaza con tu ID de aplicación
   appName: 'Simple Inventario',
-  webDir: 'www',
+  // webDir: 'www',
   // bundledWebRuntime: false,
   plugins: {
     AdMob: {
