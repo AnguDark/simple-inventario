@@ -4,6 +4,12 @@ import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalo
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
+import { addIcons } from 'ionicons';
+import { addOutline, createOutline, trashOutline } from 'ionicons/icons';
+
+// Import AdMob plugin
+import { AdMob } from '@capacitor-community/admob';
+
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -12,3 +18,15 @@ bootstrapApplication(AppComponent, {
     provideRouter(routes, withPreloading(PreloadAllModules)),
   ],
 });
+
+
+
+addIcons({
+  'add-outline': addOutline,
+  'trash-outline': trashOutline,
+  'create-outline': createOutline,
+});
+
+
+// Initialize AdMob
+AdMob.initialize({});
