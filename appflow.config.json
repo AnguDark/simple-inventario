@@ -1,6 +1,9 @@
 {
-    "ios": {
-      "nativeProjectPath": "ios/App"
-    }
-  }
-  
+    "apps":
+    [
+        {
+            "appId": "a1111a1a",
+            "iosPath": "ios\\App"
+        }
+    ]
+}
