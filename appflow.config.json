@@ -1,17 +1,9 @@
 {
     "apps": [
-      {
-        "appId": "a705177c",
-        "iosPath": "ios/App",
-        "hooks": {
-          "build": {
-            "before": [
-              {
-                "command": "npm install"
-              }
-            ]
-          }
+        {
+            "appId": "a705177c",
+            "iosPath": "ios/App",
+            "dependencyInstallCommand": "cd ../.. && npm install"
         }
-      }
     ]
-  }
+}
