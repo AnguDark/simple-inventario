@@ -151,7 +151,7 @@ export class HomePage implements OnInit {
 
   async mostrarBanner() {
     const options: BannerAdOptions = {
-      adId: 'ca-app-pub-6814093303248086/3423228899', // Reemplaza con tu Ad Unit ID
+      adId: 'ca-app-pub-6814093303248086/4771414675', // Reemplaza con tu Ad Unit ID
       adSize: BannerAdSize.ADAPTIVE_BANNER,
       position: BannerAdPosition.TOP_CENTER,
       margin: 0,
