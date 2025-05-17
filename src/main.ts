@@ -17,6 +17,10 @@ bootstrapApplication(AppComponent, {
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
   ],
+}).then(() => {
+  console.log('Ionic inicializado correctamente.');
+}).catch((err) => {
+  console.error('Error al inicializar Ionic:', err);
 });
 
 

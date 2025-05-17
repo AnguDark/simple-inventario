@@ -14,32 +14,32 @@ import { AlertController } from '@ionic/angular';
 })
 export class HomePage implements OnInit {
   productos = [
-    { id: 1, categoria: 'Electrónica ', descripcion: 'Smartphone', precio: 500 },
-    { id: 2, categoria: 'Electrónica', descripcion: 'Laptop', precio: 1200 },
-    { id: 2, categoria: 'Electrónica', descripcion: 'Laptop', precio: 1200 },
-    { id: 2, categoria: 'Electrónica', descripcion: 'Laptop', precio: 1200 },
-    { id: 2, categoria: 'Electrónica', descripcion: 'Laptop', precio: 1200 },
-    { id: 2, categoria: 'Electrónica', descripcion: 'Laptop', precio: 1200 },
-    { id: 2, categoria: 'Electrónica', descripcion: 'Laptop', precio: 1200 },
-    { id: 2, categoria: 'Electrónica', descripcion: 'Laptop', precio: 1200 },
-    { id: 2, categoria: 'Electrónica', descripcion: 'Laptop', precio: 1200 },
-    { id: 2, categoria: 'Electrónica', descripcion: 'Laptop', precio: 1200 },
-    { id: 3, categoria: 'Hogar', descripcion: 'Sofá', precio: 300 },
-    { id: 4, categoria: 'Hogar', descripcion: 'Mesa', precio: 150 },
-    { id: 5, categoria: 'Ropa', descripcion: 'Camiseta', precio: 20 },
-    { id: 6, categoria: 'Ropa', descripcion: 'Pantalón', precio: 40 },
-    { id: 7, categoria: 'Coca Cola', descripcion: 'Camiseta', precio: 20 },
-    { id: 8, categoria: 'Pepsi', descripcion: 'Pantalón', precio: 40 },
-    { id: 9, categoria: 'Joya', descripcion: 'Camiseta', precio: 20 },
-    { id: 10, categoria: 'Pepsi', descripcion: 'Pantalón', precio: 40 },
+    { id: 1, categoria: 'Electrónica', descripcion: 'Smartphone', precio: 500, costo: 300 },
+    { id: 2, categoria: 'Electrónica', descripcion: 'Laptop', precio: 1200, costo: 300 },
+    { id: 2, categoria: 'Electrónica', descripcion: 'Lapto 45 ml 454 lm 45', precio: 1200, costo: 300 },
+    { id: 2, categoria: 'Electrónica', descripcion: 'Cada fila de la tabla muestra los datos del producto (descripcion, costo, precio) y botones para editar y eliminar.', precio: 1200, costo: 300 },
+    { id: 2, categoria: 'Electrónica', descripcion: 'Laptop', precio: 1200, costo: 300 },
+    { id: 2, categoria: 'Electrónica', descripcion: 'Laptop', precio: 1200, costo: 300 },
+    { id: 2, categoria: 'Electrónica', descripcion: 'Laptop', precio: 1200, costo: 300 },
+    { id: 2, categoria: 'Electrónica', descripcion: 'Laptop', precio: 1200, costo: 300 },
+    { id: 2, categoria: 'Electrónica', descripcion: 'Laptop', precio: 1200, costo: 300 },
+    { id: 2, categoria: 'Electrónica', descripcion: 'Laptop', precio: 1200, costo: 300 },
+    { id: 3, categoria: 'Hogar', descripcion: 'Sofá', precio: 300, costo: 300 },
+    { id: 4, categoria: 'Hogar', descripcion: 'Mesa', precio: 150, costo: 300 },
+    { id: 5, categoria: 'Ropa', descripcion: 'Camiseta', precio: 20, costo: 300 },
+    { id: 6, categoria: 'Ropa', descripcion: 'Pantalón', precio: 40, costo: 300 },
+    { id: 7, categoria: 'Coca Cola', descripcion: 'Camiseta', precio: 20, costo: 300 },
+    { id: 8, categoria: 'Pepsi', descripcion: 'Pantalón', precio: 40, costo: 300 },
+    { id: 9, categoria: 'Joya', descripcion: 'Camiseta', precio: 20, costo: 300 },
+    { id: 10, categoria: 'Pepsi', descripcion: 'Pantalón', precio: 40, costo: 300 },
   ];
 
   categorias: string[] = [];
-  productosFiltrados: { id: number; categoria: string; descripcion: string; precio: number }[] = [];
+  productosFiltrados: { id: number; categoria: string; descripcion: string; precio: number, costo: number }[] = [];
   categoriaSeleccionada: string = ''; // Categoría seleccionada por defecto
 
   modalAbierto = false; // Estado del modal
-  nuevoProducto = { id: 0, categoria: '', descripcion: '', precio: 0 }; // Datos del nuevo producto
+  nuevoProducto = { id: 0, categoria: '', descripcion: '', precio: 0, costo: 0 }; // Datos del nuevo producto
 
   constructor(private alertController: AlertController) { }
 
@@ -53,7 +53,7 @@ export class HomePage implements OnInit {
       this.filtrarPorCategoria(this.categoriaSeleccionada);
     }
 
-    this.mostrarBanner();
+    // this.mostrarBanner();
   }
 
   filtrarPorCategoria(categoria: string) {
@@ -72,7 +72,7 @@ export class HomePage implements OnInit {
 
   cerrarModal() {
     this.modalAbierto = false;
-    this.nuevoProducto = { id: 0, categoria: '', descripcion: '', precio: 0 }; // Reiniciar el formulario
+    this.nuevoProducto = { id: 0, categoria: '', descripcion: '', precio: 0, costo: 0 }; // Reiniciar el formulario
   }
 
   crearProducto() {
@@ -151,9 +151,9 @@ export class HomePage implements OnInit {
 
   async mostrarBanner() {
     const options: BannerAdOptions = {
-      adId: 'ca-app-pub-6814093303248086/4771414675', // Reemplaza con tu Ad Unit ID
+      adId: 'ca-app-pub-6814093303248086/3423228899', // Reemplaza con tu Ad Unit ID
       adSize: BannerAdSize.ADAPTIVE_BANNER,
-      position: BannerAdPosition.TOP_CENTER,
+      position: BannerAdPosition.BOTTOM_CENTER,
       margin: 0,
     };
 

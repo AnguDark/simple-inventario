@@ -20,26 +20,53 @@
     </ion-segment-button>
   </ion-segment>
 
-  <ion-list class="product-list">
-    <!-- Lista de productos filtrados -->
+  <!-- <ion-list class="product-list">
+    Lista de productos filtrados
     <ion-item *ngFor="let producto of productosFiltrados">
       <ion-label>
         <h2>{{ producto.descripcion }}</h2>
         <p>Precio: ${{ producto.precio }}</p>
+        <p>Costo: ${{ producto.costo }}</p>
       </ion-label>
-      <!-- Botón para editar -->
+      Botón para editar
       <ion-button slot="end" color="primary" (click)="editarProducto(producto)">
         <ion-icon slot="icon-only" name="create-outline"></ion-icon>
       </ion-button>
-      <!-- Botón para eliminar -->
+      Botón para eliminar
       <ion-button slot="end" color="danger" (click)="confirmarEliminarProducto(producto)">
         <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
       </ion-button>
     </ion-item>
-  </ion-list>
+  </ion-list> -->
 
-   <!-- Espacio para el banner publicitario -->
-   <div class="ad-banner">
+  <ion-grid class="product-list">
+    <ion-row>
+      <ion-col size="4"><strong>Descripción</strong></ion-col>
+      <ion-col size="2"><strong>Costo</strong></ion-col>
+      <ion-col size="2"><strong>Precio</strong></ion-col>
+      <ion-col size="2"><strong>Editar</strong></ion-col>
+      <ion-col size="2"><strong>Eliminar</strong></ion-col>
+    </ion-row>
+    <ion-row *ngFor="let producto of productosFiltrados">
+      <ion-col size="4">{{ producto.descripcion }}</ion-col>
+      <ion-col size="2">${{ producto.costo }}</ion-col>
+      <ion-col size="2">${{ producto.precio }}</ion-col>
+      <ion-col size="2">
+        <ion-button color="primary" (click)="editarProducto(producto)">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button color="danger" (click)="confirmarEliminarProducto(producto)">
+          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <!-- Espacio para el banner publicitario -->
+  <div class="ad-banner">
     <p>Publicidad</p>
   </div>
 
@@ -65,15 +92,16 @@
         <form (ngSubmit)="crearProducto()">
           <ion-item *ngIf="!nuevoProducto.id">
             <ion-label position="floating">Categoría</ion-label>
-            <ion-input
-              [(ngModel)]="nuevoProducto.categoria"
-              name="categoria"
-              required>
+            <ion-input [(ngModel)]="nuevoProducto.categoria" name="categoria" required>
             </ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="floating">Descripción</ion-label>
             <ion-input [(ngModel)]="nuevoProducto.descripcion" name="descripcion" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Costo</ion-label>
+            <ion-input type="number" [(ngModel)]="nuevoProducto.costo"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="floating">Precio</ion-label>
